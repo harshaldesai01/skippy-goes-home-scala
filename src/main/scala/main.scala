@@ -17,11 +17,11 @@ def main(): Unit = {
    */
   def simulate(): Unit = {
     val die: Die = new Die
-    
-    val initialSkippyPosition: Point = new Point(0, 0)
+
+    val initialSkippyPosition: Point = Point(0, 0)
     val skippy: Kangaroo = new Kangaroo(initialSkippyPosition)
     var totalHops = 0
-    
+
     // Roll the die and make skippy hop until he's home
     while (!hasReachedHome(skippy.currPosition)) {
       val direction = die.roll()
@@ -38,7 +38,7 @@ def main(): Unit = {
    * @return true if skippy is at home position
    */
   def hasReachedHome(currSkippyPosition: Point) = {
-    currSkippyPosition.isSamePositionAs(homePosition)
+    currSkippyPosition==homePosition
   }
 }
 

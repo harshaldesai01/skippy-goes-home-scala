@@ -3,7 +3,7 @@
  * @param x x co-ordinate of the point
  * @param y y co-ordinate of the point
  */
-class Point(var x: Int = 0, var y: Int = 0){
+case class Point(var x: Int = 0, var y: Int = 0){
   /**
    * Print position of the point
    * @return String position in (x, y) format
