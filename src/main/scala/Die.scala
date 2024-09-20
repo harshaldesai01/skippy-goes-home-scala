@@ -8,7 +8,8 @@ import scala.util.Random
  */
 class Die {
   private val sides = List(N, S, E, W)
-  var directionCounts: mutable.Map[Direction, Int] = mutable.HashMap(
+  var totalThrows = 0;
+  private val directionCounts: mutable.Map[Direction, Int] = mutable.HashMap(
     N -> 0,
     S -> 0,
     E -> 0,
@@ -21,6 +22,7 @@ class Die {
    */
   def roll(): Direction = {
     val direction = Random.shuffle(sides).head
+    totalThrows+=1 // update total throws
     updateDirectionCount(direction) // update direction hash table
     direction
   }
@@ -31,5 +33,14 @@ class Die {
    */
   private def updateDirectionCount(direction: Direction): Unit = {
     directionCounts.update(direction, directionCounts(direction)+1)
+  }
+
+  def printDieStats(): Unit = {
+    println("Die statistics:")
+    println("Total throws:: " + totalThrows)
+    sides.foreach(direction => {
+      val percentage = (directionCounts(direction).toDouble / totalThrows) * 100
+      print(direction.toString + ": " + f"$percentage%.1f%% ")
+    })
   }
 }

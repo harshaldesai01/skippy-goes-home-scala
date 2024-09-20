@@ -6,6 +6,7 @@ import Direction.*
  */
 class Kangaroo(initialPosition: Point = Point(0, 0)) {
   var currPosition: Point = initialPosition // current position of the Kangaroo
+  var totalHops = 0
 
   /**
    * Given direction and grid, hop moves the kangaroo to a new position if it's inside the grid's boundary
@@ -19,6 +20,7 @@ class Kangaroo(initialPosition: Point = Point(0, 0)) {
       println("Oops, hit the boundary: " + newPosition.toString)
     } else{
       currPosition = newPosition
+      totalHops+=1 // update hops only when it's not a boundary
       println("Hopped to: " + currPosition.toString)
     }
   }

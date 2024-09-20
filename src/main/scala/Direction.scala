@@ -3,5 +3,11 @@
  */
 enum Direction {
   case N, S, E, W
-
+  
+  override def toString: String = this match{
+    case N => "North"
+    case S => "South"
+    case E => "East"
+    case W => "West"
+  }
 }

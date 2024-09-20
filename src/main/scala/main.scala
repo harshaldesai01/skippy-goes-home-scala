@@ -4,7 +4,7 @@
 @main
 def main(): Unit = {
   println("Enter dimension of the Grid (>=1):")
-  var gridSize: Int = scala.io.StdIn.readInt()
+  val gridSize: Int = scala.io.StdIn.readInt()
   if(gridSize < 1) throw new IllegalArgumentException("Grid size must be at least 1.")
   val grid: Grid = new Grid(gridSize)
   val homePosition: Point = grid.home
@@ -20,15 +20,18 @@ def main(): Unit = {
 
     val initialSkippyPosition: Point = Point(0, 0)
     val skippy: Kangaroo = new Kangaroo(initialSkippyPosition)
-    var totalHops = 0
 
     // Roll the die and make skippy hop until he's home
     while (!hasReachedHome(skippy.currPosition)) {
       val direction = die.roll()
       skippy.hop(direction, grid)
-      totalHops += 1
     }
-    println(s"Finished in $totalHops hops!")
+    println(s"Finished in ${skippy.totalHops} hops!")
+    println()
+    // Print Die Statistics
+    if(die.totalThrows>0){
+      die.printDieStats()
+    }
   }
 
   /**

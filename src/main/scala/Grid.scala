@@ -3,9 +3,9 @@
  * @param gridSize size of the grid
  */
 class Grid(val gridSize: Int) {
-  val gridStart = new Point(0, 0)
+  val gridStart: Point = Point(0, 0)
   // North-East corner (home position on the grid)
-  val home = new Point(gridSize-1, gridSize-1)
+  val home: Point = Point(gridSize-1, gridSize-1)
 
   /**
    * Method to check if the given position is inside the boundary of the grid
