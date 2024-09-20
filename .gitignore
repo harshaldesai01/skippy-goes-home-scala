@@ -1,39 +1,30 @@
-# Credits: https://github.com/scala/scala3-example-project/blob/main/.gitignore
+# Created by https://www.gitignore.io/api/sbt,scala
 
-.DS_Store
-*.class
-*.log
-*~
+### SBT ###
+# Simple Build Tool
+# http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
 
-# sbt specific
 dist/*
 target/
 lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
-project/local-plugins.sbt
 .history
-.bsp
-.metals
-.bloop
-
-# Scala-IDE specific
-.scala_dependencies
 .cache
-.classpath
-.project
-.settings
-classes/
+.lib/
 
-# idea
+### Scala ###
+*.class
+*.log
+
+# End of https://www.gitignore.io/api/sbt,scala
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
 .idea
-.idea_modules
-/.worksheet/
+out
 
-# Dotty-IDE
-.dotty-ide-artifact
-.dotty-ide.json
-
-# Visual Studio Code
-.vscode
+.bsp
