@@ -35,6 +35,9 @@ class Die {
     directionCounts.update(direction, directionCounts(direction)+1)
   }
 
+  /**
+   * Prints Die Statistics: total die throws and throw percentage for each direction
+   */
   def printDieStats(): Unit = {
     println("Die statistics:")
     println("Total throws:: " + totalThrows)
